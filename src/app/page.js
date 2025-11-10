@@ -1,6 +1,7 @@
 // src/app/page.js
 import { createClient } from '@supabase/supabase-js';
-import { Heart, Thermometer, Droplet, Activity, Wifi, Clock, TrendingUp } from 'lucide-react';
+import { Heart, Thermometer, Droplet, Activity, Wifi, Clock, TrendingUp, BarChart3 } from 'lucide-react';
+import Link from 'next/link';
 
 const supabase = createClient(
   process.env.NEXT_PUBLIC_SUPABASE_URL,
@@ -63,6 +64,13 @@ export default async function Home() {
               <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
               <span className="text-sm font-medium text-green-700">Live</span>
             </div>
+            <Link
+                href="/analytics-built-in"
+              className="flex items-center gap-2 bg-indigo-600 text-white px-4 py-2 rounded-full hover:bg-indigo-700 transition-colors shadow-lg hover:shadow-xl"
+            >
+              <BarChart3 className="w-5 h-5" />
+              <span className="text-sm font-medium">Analytics</span>
+            </Link>
           </div>
         </div>
       </div>
